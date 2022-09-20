@@ -17,17 +17,19 @@ int main(void)
 	std::cout <<  "Creating a Zombie called Ahmed\n";
 	Zombie ahmed("Ahmed");
 	ahmed.announce();
-	
-	std::cout <<  "\nCreating a Zombie using newZombie\n";
-	Zombie *altman = newZombie("Ole");
-	altman->announce();
-	delete altman;
 
-	std::cout <<  "\nCreating a Zombie using randomChump\n";
-	randomChump("pale'n'greeny");
+	int size = 3;
+	std::cout <<  "\nCreating a Zombie horde\n";
+	Zombie *altman = zombieHorde(size, "jensen");
+	for (int i = 0; i < size; ++i)
+	{
+		std::cout << i << " ";
+		altman[i].announce();
+	}
+	delete [] altman;
 
 	std::cout <<  "\nCreating a Zombie called Foo\n";
 	Zombie brian("Foo");
 	brian.announce();
-	return(0);
+	return (0);
 }
