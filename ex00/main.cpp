@@ -18,11 +18,15 @@ int main(void)
 	Zombie ahmed("Ahmed");
 	ahmed.announce();
 	
-	// std::cout <<  "\nCreating a Zombie using newZombie\n";
-	// Zombie *altman = newZombie("Ole");
-	// altman->announce();
-	// delete altman;
+	std::cout <<  "\nCreating a Zombie using newZombie\n";
+	Zombie *altman = newZombie("Ole");
+	altman->announce();
+	delete altman;
 
-	// std::cout <<  "\nCreating a Zombie using randomChump\n";
-	// randomChump("Ole");
+	std::cout <<  "\nCreating a Zombie using randomChump\n";
+	randomChump("pale'n'greeny");
+
+	std::cout <<  "\nCreating a Zombie called Foo\n";
+	Zombie brian("Foo");
+	brian.announce();
 }
