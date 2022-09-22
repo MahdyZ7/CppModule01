@@ -12,7 +12,7 @@
 
 NAME = main
 
-SRC = main.cpp
+SRC = HumanA.cpp Weapon.cpp main.cpp HumanB.cpp
 
 CC = c++
 
