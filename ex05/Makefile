@@ -1,6 +1,6 @@
 NAME = main
 
-SRC = main.cpp
+SRC = Harl.cpp main.cpp
 
 CC = c++
 
@@ -23,4 +23,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re : fclean all
+
 .PHONY: clean fclean all re
