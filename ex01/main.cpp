@@ -18,7 +18,7 @@ int main(void)
 	Zombie ahmed("Ahmed");
 	ahmed.announce();
 
-	int size = 3;
+	int size = 12;
 	std::cout <<  "\nCreating a Zombie horde\n";
 	Zombie *altman = zombieHorde(size, "jensen");
 	for (int i = 0; i < size; ++i)
