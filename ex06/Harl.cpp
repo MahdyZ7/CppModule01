@@ -26,35 +26,28 @@ void Harl::error(void)
 
 void Harl::complain(std::string level)
 {
-	int pnt = 0;
-
-	
-	if (level == "DEBUG")
-		pnt = 1;
-	else if (level == "INFO")
-		pnt = 2;
-	else if (level == "WARNING")
-		pnt = 3;
-	else if (level == "ERROR")
-		pnt = 4;
-
-	if (pnt)
-		std::cout<< "[ " << level << " ]\n";
-	else
-		std::cout<< "[ Probably complaining about insignificant problems ]\n";
-	switch (pnt)
+	int lvl = 0;
+	std::string comp_index[] = {"DEBUG" , "INFO", "WARNING", "ERROR"};
+	for (; lvl < 4; ++lvl)
+	{
+		if (level == comp_index[lvl])
 		{
-			case (1):
-				this->debug();
-				 // [[fallthrough]];
-			case (2):
-				this->info();
-			 // [[fallthrough]];
-			case(3):
-				this->warning();
-			// [[fallthrough]];
-			case (4):
-				this->error();
-				break;				
+			std::cout<< "[ " << level << " ]\n";
+			break;
 		}
+	}
+	switch (lvl)
+	{
+		case (0):
+			this->debug();
+		case (1):
+			this->info();
+		case (2):
+			this->warning();
+		case (3):
+			this->error();
+			break;
+		 default:
+			std::cout<< "[ Probably complaining about insignificant problems ]\n";
+	}
 }

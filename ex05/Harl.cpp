@@ -32,14 +32,15 @@ void Harl::error(void)
 
 void Harl::complain(std::string level)
 {
-	if (level == "DEBUG")
-		this->debug();
-	else if (level == "INFO")
-		this->info();
-	else if (level == "WARNING")
-		this->warning();
-	else if (level == "ERROR")
-		this->error();
-	else
-		std::cout << "Harl is at peace\n";
+	void (Harl::*compl_fun[])(void) = {
+		&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	std::string comp_index[] = {"DEBUG" , "INFO", "WARNING", "ERROR"};
+	for (int i = 0; i < 4; ++i)
+	{
+		if (level == comp_index[i])
+		{
+			void (Harl::*comp_slkt)(void) = compl_fun[i];
+			(this->*comp_slkt)();
+		}
+	}
 }
